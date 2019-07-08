@@ -55,7 +55,7 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic": {
-        "APP_ID": "765713df",
+        "APP_ID": "98b060c0",
         "CHANNEL_NAME": "Production",
         "UPDATE_METHOD": "background",
         "WARN_DEBUG": "true",
