@@ -1,0 +1,92 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Parlour requirements</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+      <ion-label>Parlour type</ion-label>
+      <ion-select [(ngModel)]="parlourType">
+        <ion-option value="milkline">Milkline</ion-option>
+        <ion-option value="recordingJar">Recording jar</ion-option>
+      </ion-select>
+  </ion-item>
+
+  <!-- (ionChange)="loadDetails()" -->
+
+  <ion-item>
+
+      <ion-label>No. of units</ion-label>
+
+      <ion-select [(ngModel)]="numberUnits">
+        
+        <ion-option value="4">4</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="16">16</ion-option>
+        <ion-option value="18">18</ion-option>
+        <ion-option value="20">20</ion-option>
+        <ion-option value="22">22</ion-option>
+        <ion-option value="24">24</ion-option>
+        <ion-option value="26">26</ion-option>
+        <ion-option value="28">28</ion-option>
+        <ion-option value="30">30</ion-option>
+        <ion-option value="32">32</ion-option>
+        <ion-option value="34">34</ion-option>
+        <ion-option value="36">36</ion-option>
+        <ion-option value="38">38</ion-option>
+        <ion-option value="40">40</ion-option>
+
+      </ion-select>
+
+  </ion-item>
+
+  <ion-list *ngIf="parlourType && numberUnits" no-lines padding-top>
+        
+    <ion-item padding-top no-lines>
+      <ion-label>Milkline Bore (mm):</ion-label>
+      <span item-right><strong>{{requirements[parlourType][numberUnits][1]}}</strong></span>
+    </ion-item>
+
+    <ion-item padding-top no-lines>
+        <ion-label>Effective Reserve for Washing (l/min):</ion-label>
+        <span item-right><strong>{{requirements[parlourType][numberUnits][2]}}</strong></span>
+    </ion-item>
+
+    <ion-item padding-top no-lines>
+      <ion-label>Effective Reserve for Milking (l/min):</ion-label>
+      <span item-right><strong>{{requirements[parlourType][numberUnits][3]}}</strong></span>
+    </ion-item>
+
+    <ion-item padding-top no-lines>
+        <ion-label>Sanitary Trap E. Volume (l):</ion-label>
+        <span item-right><strong>{{requirements[parlourType][numberUnits][4]}}</strong></span>
+    </ion-item>
+
+    <ion-item padding-top no-lines>
+      <ion-label>Wash Line Bore (mm) Minimum:</ion-label>
+      <span item-right><strong>{{requirements[parlourType][numberUnits][5]}}</strong></span>
+    </ion-item>
+
+    <ion-item padding-top no-lines>
+      <ion-label>Main Airline Bore (mm):</ion-label>
+      <span item-right><strong>{{requirements[parlourType][numberUnits][6]}}</strong></span>
+    </ion-item>
+
+    <ion-item padding-top no-lines>
+      <ion-label>Estimated Pump Capacity (l/min):</ion-label>
+      <span item-right><strong>{{requirements[parlourType][numberUnits][7]}}</strong></span>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
