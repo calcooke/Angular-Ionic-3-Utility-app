@@ -8,6 +8,7 @@ import {DatePipe} from '@angular/common'
 import { FireStoreProvider} from '../../providers/fire-store/fire-store';
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-add-report',
@@ -17,10 +18,11 @@ export class AddReportPage {
 
   public reportForm: FormGroup;
   public myList: string[];
+  ports: any[];
+  seletedCounty:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public alertCtrl: AlertController, public toastController: ToastController, public datepipe: DatePipe, public fireStore: FireStoreProvider) {
-
-
+  
     this.reportForm = formBuilder.group({
 
       //testerNo: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -29,7 +31,8 @@ export class AddReportPage {
       reportNo: ['', Validators.required],
       stickerNo: ['', Validators.required],
       farmID: ['', Validators.required],
-      county: ['', Validators.required]
+      county: ['', Validators.required],
+      note: ['']
       
   });
 
@@ -40,7 +43,7 @@ export class AddReportPage {
     console.log('ionViewDidLoad AddReportPage');
   }
 
-
+ 
   public addReport() {
     
     
@@ -56,11 +59,10 @@ export class AddReportPage {
           stickerNo: this.reportForm.value.stickerNo,
           farmID: this.reportForm.value.farmID,
           county: this.reportForm.value.county,
-          dateAdded: this.datepipe.transform(date, 'dd-MM-yy HH:mm')
+          dateAdded: this.datepipe.transform(date, 'dd-MM-yy HH:mm'),
+          note: this.reportForm.value.note
 
         }
-
-        console.log(report);
   
       this.showConfirm(report);
     }
@@ -85,6 +87,8 @@ export class AddReportPage {
           <strong>Farm I.D:</strong> ${report.farmID}
           <br/>
           <strong>County:</strong> ${report.county}
+          <br/>
+          <strong>Note:</strong> ${report.note}
         
       `,
       buttons: [

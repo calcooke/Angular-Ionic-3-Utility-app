@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,6 +15,8 @@ import { TechnicalRequirementsProvider } from '../providers/technical-requiremen
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import {AngularFireModule} from 'angularfire2';
 import { FireStoreProvider } from '../providers/fire-store/fire-store';
+import { IonicSelectableModule } from 'ionic-selectable';
+
 
 // "rxjs": "5.5.2",
 
@@ -42,6 +44,7 @@ var firebaseConfig = {
     HttpClientModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule.initializeApp(firebaseConfig),
+    IonicSelectableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,6 +60,7 @@ var firebaseConfig = {
     DatePipe,
     TechnicalRequirementsProvider,
     FireStoreProvider
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

@@ -62,11 +62,59 @@
       </ion-label>
     
       <ion-item>
-        <ion-input type='text' formControlName='county'></ion-input>
-      </ion-item>
+        
+      <ion-select formControlName='county'>
+        <ion-option>Carlow</ion-option>
+        <ion-option>Cavan</ion-option>
+        <ion-option>Clare</ion-option>
+        <ion-option>Cork</ion-option>
+        <ion-option>Donegal</ion-option>
+        <ion-option>Dublin</ion-option>
+        <ion-option>Galway</ion-option>
+        <ion-option>Kerry</ion-option>
+        <ion-option>Kildare</ion-option>
+        <ion-option>Kilkenny</ion-option>
+        <ion-option>Laois</ion-option>
+        <ion-option>Leitrim</ion-option>
+        <ion-option>Limerick</ion-option>
+        <ion-option>Longford</ion-option>
+        <ion-option>Louth</ion-option>
+        <ion-option>Mayo</ion-option>
+        <ion-option>Meath</ion-option>
+        <ion-option>Monaghan</ion-option>
+        <ion-option>Offaly</ion-option>
+        <ion-option>Roscommon</ion-option>
+        <ion-option>Sligo</ion-option>
+        <ion-option>Tipperary</ion-option>
+        <ion-option>Tyrone</ion-option>
+        <ion-option>Waterford</ion-option>
+        <ion-option>Westmeath</ion-option>
+        <ion-option>Wexford</ion-option>
+        <ion-option>Wicklow</ion-option>
+      </ion-select>
 
-      
-  
+      <!-- <ionic-selectable
+        item-content
+        formControlName="county"
+        itemValueField="name"
+        itemTextField="name"
+        [items]="ports"
+        [canSearch]="true"
+        (onChange)="portChange($event)">
+      </ionic-selectable> -->
+
+    </ion-item>
+
+      <ion-label >
+        Notes
+      </ion-label>
+
+    <ion-item>
+        
+        <ion-textarea formControlName='note' custom-maxlength [charMaxLength]="5" rows="6" cols="20" type="text" placeholder="Enter any notes here..."   [(ngModel)]="note"></ion-textarea>
+     </ion-item>
+
+
     </form>
   
     <button ion-button block [disabled]="!reportForm.valid" (click)='addReport()'>Submit</button>
