@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import {AngularFireModule} from 'angularfire2';
 import { FireStoreProvider } from '../providers/fire-store/fire-store';
 import { IonicSelectableModule } from 'ionic-selectable';
+import { BackgroundFetch} from '@ionic-native/background-fetch';
 
 
 // "rxjs": "5.5.2",
@@ -59,7 +60,8 @@ var firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DatePipe,
     TechnicalRequirementsProvider,
-    FireStoreProvider
+    FireStoreProvider,
+    BackgroundFetch,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
