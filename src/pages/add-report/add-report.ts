@@ -7,8 +7,6 @@ import { ToastController } from 'ionic-angular';
 import {DatePipe} from '@angular/common'
 import { FireStoreProvider} from '../../providers/fire-store/fire-store';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-add-report',
@@ -34,15 +32,13 @@ export class AddReportPage {
       county: ['', Validators.required],
       note: ['']
       
-  });
-
+    });
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddReportPage');
+    
   }
-
  
   public addReport() {
     
@@ -60,11 +56,16 @@ export class AddReportPage {
           farmID: this.reportForm.value.farmID,
           county: this.reportForm.value.county,
           dateAdded: this.datepipe.transform(date, 'dd-MM-yy HH:mm'),
-          note: this.reportForm.value.note
+          
 
+        }
+
+        if(this.reportForm.value.note){
+          report.note = this.reportForm.value.note
         }
   
       this.showConfirm(report);
+
     }
 
   }
