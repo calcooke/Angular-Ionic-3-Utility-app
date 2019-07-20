@@ -18,6 +18,7 @@ export class AddReportPage {
   public myList: string[];
   ports: any[];
   seletedCounty:any;
+  note: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public alertCtrl: AlertController, public toastController: ToastController, public datepipe: DatePipe, public fireStore: FireStoreProvider) {
   
@@ -61,16 +62,25 @@ export class AddReportPage {
         }
 
         if(this.reportForm.value.note){
+
           report.note = this.reportForm.value.note
+          // this.note = this.reportForm.value.note;
+
+          this.showConfirm(report, report.note);
+          
+        } else {
+
+          this.note = "None" 
+          this.showConfirm(report, this.note);
+
         }
   
-      this.showConfirm(report);
 
     }
 
   }
 
-  showConfirm(report) {
+  showConfirm(report, note) {
 
     const confirm = this.alertCtrl.create({
       cssClass: 'confirm',
@@ -89,7 +99,7 @@ export class AddReportPage {
           <br/>
           <strong>County:</strong> ${report.county}
           <br/>
-          <strong>Note:</strong> ${report.note}
+          <strong>Note:</strong> ${note}
         
       `,
       buttons: [

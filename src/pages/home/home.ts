@@ -33,13 +33,9 @@ export class HomePage {
        })
        .catch(e => console.log('Error initializing background fetch', e));
   
-    // Start the background-fetch API. Your callbackFn provided to #configure will be executed each time a background-fetch event occurs. NOTE the #configure method automatically calls #start. You do not have to call this method after you #configure the plugin
     backgroundFetch.start();
   
-    // Stop the background-fetch API from firing fetch events. Your callbackFn provided to #configure will no longer be executed.
     backgroundFetch.stop();
-
-
 
   }
 

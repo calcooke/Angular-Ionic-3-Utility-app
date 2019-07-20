@@ -4,6 +4,7 @@ import { AngularFirestore} from 'angularfire2/firestore';
 import 'rxjs/add/operator/map';
 
 
+
 @Injectable()
 export class FireStoreProvider {
 
@@ -14,6 +15,10 @@ export class FireStoreProvider {
   addReport(report){
 
     this.fireStoreDb.collection("reports").add(report);
+    
+  }
+
+  addReportOnWake(){
     
   }
 

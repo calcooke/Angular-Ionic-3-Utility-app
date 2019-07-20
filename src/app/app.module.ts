@@ -17,6 +17,7 @@ import {AngularFireModule} from 'angularfire2';
 import { FireStoreProvider } from '../providers/fire-store/fire-store';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { BackgroundFetch} from '@ionic-native/background-fetch';
+import { AppMinimize } from '@ionic-native/app-minimize';
 
 
 // "rxjs": "5.5.2",
@@ -62,6 +63,7 @@ var firebaseConfig = {
     TechnicalRequirementsProvider,
     FireStoreProvider,
     BackgroundFetch,
+    AppMinimize,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
