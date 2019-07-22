@@ -18,6 +18,8 @@ import { FireStoreProvider } from '../providers/fire-store/fire-store';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { BackgroundFetch} from '@ionic-native/background-fetch';
 import { AppMinimize } from '@ionic-native/app-minimize';
+import { TesterDetailsProvider } from '../providers/tester-details/tester-details';
+import {IonicStorageModule} from '@ionic/storage'
 
 
 // "rxjs": "5.5.2",
@@ -46,9 +48,10 @@ var firebaseConfig = {
     HttpClientModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule.initializeApp(firebaseConfig),
-    IonicSelectableModule
+    IonicSelectableModule,
+    IonicStorageModule.forRoot()
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [IonicApp], 
   entryComponents: [
     MyApp,
     HomePage,
@@ -64,6 +67,7 @@ var firebaseConfig = {
     FireStoreProvider,
     BackgroundFetch,
     AppMinimize,
+    TesterDetailsProvider,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
