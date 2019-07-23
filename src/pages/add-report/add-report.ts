@@ -17,7 +17,14 @@ export class AddReportPage {
 
   public reportForm: FormGroup;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public alertCtrl: AlertController, public toastController: ToastController, public datepipe: DatePipe, public fireStore: FireStoreProvider, public testerDetails: TesterDetailsProvider) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public formBuilder: FormBuilder, 
+              public alertCtrl: AlertController, 
+              public toastController: ToastController, 
+              public datepipe: DatePipe, 
+              public fireStore: FireStoreProvider, 
+              public testerDetails: TesterDetailsProvider) {
   
     this.reportForm = formBuilder.group({
 
@@ -35,6 +42,8 @@ export class AddReportPage {
   } 
 
   ionViewDidLoad() {
+
+    this.testerDetails.getTesterID();
     
   }
  
@@ -68,7 +77,8 @@ export class AddReportPage {
 
         }
 
-        this.testerDetails.testerId = this.reportForm.value.testerNo;
+        //this.testerDetails.testerId = this.reportForm.value.testerNo;
+        this.testerDetails.addTesterID(this.reportForm.value.testerNo);
   
 
     }
@@ -108,6 +118,7 @@ export class AddReportPage {
           text: 'Confirm',
           handler: () => {
             this.fireStore.addReport(report);
+            this.testerDetails.addItem(report);
             this.presentToast();
             this.navCtrl.popToRoot();
           }
@@ -148,6 +159,7 @@ export class AddReportPage {
           text: 'Confirm',
           handler: () => {
             this.fireStore.addReport(report);
+            this.testerDetails.addItem(report);
             this.presentToast();
             this.navCtrl.popToRoot();
           }

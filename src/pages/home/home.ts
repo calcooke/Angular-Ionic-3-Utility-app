@@ -4,6 +4,7 @@ import {AddReportPage} from '../add-report/add-report';
 import {ParlourTypePage} from '../parlour-type/parlour-type';
 import {FireStoreProvider} from '../../providers/fire-store/fire-store';
 import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch';
+import {PreviousReportsPage} from '../previous-reports/previous-reports';
 
 
 
@@ -48,6 +49,12 @@ export class HomePage {
   public goToParlourType(){
 
     this.navCtrl.push(ParlourTypePage);
+
+  }
+
+  public goToPreviousReports(){
+
+    this.navCtrl.push(PreviousReportsPage);
 
   }
 

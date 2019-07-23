@@ -20,6 +20,7 @@ import { BackgroundFetch} from '@ionic-native/background-fetch';
 import { AppMinimize } from '@ionic-native/app-minimize';
 import { TesterDetailsProvider } from '../providers/tester-details/tester-details';
 import {IonicStorageModule} from '@ionic/storage'
+import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
 
 
 // "rxjs": "5.5.2",
@@ -41,6 +42,7 @@ var firebaseConfig = {
     HomePage,
     AddReportPage,
     ParlourTypePage,
+    PreviousReportsPage,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ var firebaseConfig = {
     HomePage,
     AddReportPage,
     ParlourTypePage,
+    PreviousReportsPage
   ],
   providers: [
     StatusBar,
