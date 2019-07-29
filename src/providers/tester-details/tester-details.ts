@@ -22,20 +22,6 @@ export class TesterDetailsProvider {
 
     this.storage.set(ID_KEY, testerId)
 
-    // return this.storage.get(ID_KEY).then((id:String[]) => {
-
-    //   if(id){
-
-    //     id.push(testerId);
-
-    //     return this.storage.set(ID_KEY, id)
-
-    //   } else {
-
-    //     return this.storage.set(ID_KEY, [testerId])
-    //   }
-
-    // });
 
   }
 
