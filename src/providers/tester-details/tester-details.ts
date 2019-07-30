@@ -11,7 +11,7 @@ const ITEMS_KEY = "previous-reports";
 @Injectable()
 export class TesterDetailsProvider {
 
-  testerId: String = "";
+  testerId: String = " ";
 
   constructor(public http: HttpClient, private storage:Storage) {
 

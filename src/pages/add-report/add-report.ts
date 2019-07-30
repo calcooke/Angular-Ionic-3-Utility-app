@@ -29,7 +29,7 @@ export class AddReportPage {
     this.reportForm = formBuilder.group({
 
       //testerNo: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      testerNo: [`${testerDetails.testerId}`, Validators.required],
+      testerNo: [`${testerDetails.testerId}`, Validators.compose([Validators.minLength(5), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       testDate: ['', Validators.required],
       reportNo: ['', Validators.required],
       stickerNo: ['', Validators.required],
