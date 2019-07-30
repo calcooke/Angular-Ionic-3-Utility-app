@@ -11,7 +11,7 @@ const ITEMS_KEY = "previous-reports";
 @Injectable()
 export class TesterDetailsProvider {
 
-  testerId: String = " ";
+  // testerId: String = " ";
 
   constructor(public http: HttpClient, private storage:Storage) {
 
@@ -27,15 +27,13 @@ export class TesterDetailsProvider {
 
   getTesterID(){
 
-    this.storage.get(ID_KEY).then((val) =>{
+    return this.storage.get(ID_KEY);
 
-      this.testerId = val;
-      console.log("The tester Id is")
-      console.log(this.testerId);
+    // this.storage.get(ID_KEY).then((val) =>{
 
-    }
+    //   this.testerId = val;
 
-    )
+    // })
 
   }
 

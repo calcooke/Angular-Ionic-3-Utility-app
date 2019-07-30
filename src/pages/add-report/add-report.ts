@@ -16,6 +16,7 @@ import {TesterDetailsProvider} from '../../providers/tester-details/tester-detai
 export class AddReportPage {
 
   public reportForm: FormGroup;
+  testerId: String = " ";
   
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
@@ -25,11 +26,13 @@ export class AddReportPage {
               public datepipe: DatePipe, 
               public fireStore: FireStoreProvider, 
               public testerDetails: TesterDetailsProvider) {
+
   
     this.reportForm = formBuilder.group({
 
       //testerNo: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      testerNo: [`${testerDetails.testerId}`, Validators.compose([Validators.minLength(5), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      // testerNo: [`${testerDetails.testerId}`, Validators.compose([Validators.minLength(5), Validators.required])],
+      testerNo: [`${this.testerId}`, Validators.compose([Validators.minLength(5), Validators.required])],
       testDate: ['', Validators.required],
       reportNo: ['', Validators.required],
       stickerNo: ['', Validators.required],
@@ -43,7 +46,11 @@ export class AddReportPage {
 
   ionViewDidLoad() {
 
-    this.testerDetails.getTesterID();
+    this.testerDetails.getTesterID().then(val => {
+
+      this.testerId = val;
+
+    });
     
   }
  
@@ -119,6 +126,7 @@ export class AddReportPage {
           handler: () => {
             this.fireStore.addReport(report);
             this.testerDetails.addItem(report);
+            this.testerDetails.addTesterID(report.testerNo);
             this.presentToast();
             this.navCtrl.popToRoot();
           }
@@ -160,6 +168,7 @@ export class AddReportPage {
           handler: () => {
             this.fireStore.addReport(report);
             this.testerDetails.addItem(report);
+            this.testerDetails.addTesterID(report.testerNo);
             this.presentToast();
             this.navCtrl.popToRoot();
           }
