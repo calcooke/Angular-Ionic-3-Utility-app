@@ -8,16 +8,11 @@
 
 <ion-content padding>
   <h1 *ngIf="fetched">Fetch has fired</h1>
-  <!-- <ion-img src='./www/assets/imgs/logo.jpg'></ion-img>
-  <ion-img src='../assets/imgs/logo.png'></ion-img>
-  <img src="./www/assets/imgs/logo.png">
-  <p>Third last one</p> -->
-  <img class="mainLogo" src="assets/imgs/logo.png">
-  <!-- <p>Second last one</p>
-  <img src='../assets/imgs/logo.png'>
-  <p>Last one</p>
-  <img src='../../assets/imgs/logo.png'> -->
-  <!-- <img src="../assets/imgs/logo.jpg"> -->
+
+  <!-- This is assets within the src folder -->
+ 
+  <img class="mainLogo" src="assets/imgs/IMQCS-logo-256.png">
+  
   <button class="largeButton" ion-button full margin-bottom (click)='goToAddReport()'>Submit report</button>
   <button class="previousButton" ion-button full margin-bottom (click)='goToPreviousReports()'>Previous reports</button>
   <button class="secondLargeButton" ion-button full margin15-top (click)='goToParlourType()'>Parlor requirements</button>
