@@ -23,7 +23,7 @@ export class PreviousReportsPage {
 
     this.testerDetails.getItems().then(reports => {
 
-      this.previousReports = reports
+      this.previousReports = reports.sort();
 
     })
 
