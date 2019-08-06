@@ -36,7 +36,7 @@ export class AddReportPage {
       testDate: ['', Validators.required],
       reportNo: ['', Validators.required],
       stickerNo: ['', Validators.required],
-      farmID: ['', Validators.required],
+      farmID: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('^[a-z]+(-[a-z]+)*$'), Validators.required])],
       county: ['', Validators.required],
       note: ['']
       

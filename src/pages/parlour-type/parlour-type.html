@@ -8,9 +8,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-  <ion-item>
+  <ion-item class="parlourType">
       <ion-label>Parlour type</ion-label>
       <ion-select [(ngModel)]="parlourType">
         <ion-option value="midi-level-milkline">Midi-level Milkline, 2 stalls/unit </ion-option>
@@ -54,7 +54,7 @@
 
   </ion-item>
 
-  <ion-list *ngIf="parlourType && numberUnits" no-lines padding-top>
+  <ion-list *ngIf="parlourType && numberUnits" no-lines>
         
     <ion-item padding-top no-lines>
       <ion-label>Milkline Bore (mm):</ion-label>
