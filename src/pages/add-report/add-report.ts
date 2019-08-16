@@ -32,11 +32,12 @@ export class AddReportPage {
 
       //testerNo: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       // testerNo: [`${testerDetails.testerId}`, Validators.compose([Validators.minLength(5), Validators.required])],
-      testerNo: [`${this.testerId}`, Validators.compose([Validators.minLength(5), Validators.required])],
+      //stickerNo: ['', Validators.compose([Validators.maxLength(15), Validators.pattern('[a-zA-Z0-9-]*'), Validators.required])],
+      testerNo: [`${this.testerId}`, Validators.compose([Validators.maxLength(20), Validators.required])],
       testDate: ['', Validators.required],
-      reportNo: ['', Validators.required],
-      stickerNo: ['', Validators.required],
-      farmID: ['', Validators.compose([Validators.maxLength(10), Validators.pattern('^[a-z]+(-[a-z]+)*$'), Validators.required])],
+      reportNo: ['', Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z0-9-]*'), Validators.required])],
+      stickerNo: ['', Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z0-9-]*'), Validators.required])],
+      farmID: ['', Validators.compose([Validators.maxLength(20), Validators.pattern('[a-zA-Z0-9-]*'), Validators.required])],
       county: ['', Validators.required],
       note: ['']
       
