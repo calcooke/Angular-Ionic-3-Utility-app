@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ɵConsole } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from 'ionic-angular';
@@ -7,6 +7,7 @@ import { ToastController } from 'ionic-angular';
 import {DatePipe} from '@angular/common'
 import { FireStoreProvider} from '../../providers/fire-store/fire-store';
 import {TesterDetailsProvider} from '../../providers/tester-details/tester-details'
+//import { validateEventsArray } from 'angularfire2/firestore';
 
 @IonicPage()
 @Component({
@@ -95,6 +96,19 @@ export class AddReportPage {
 
   showConfirm(report) {
 
+    // for (const key in report) {
+
+    //   report[key].trim();
+
+    //   if(key !== 'county'){
+
+    //     report[key].toLowerCase();
+
+    //   }
+      
+    // }
+
+
     const confirm = this.alertCtrl.create({
       cssClass: 'confirm',
       title: 'Confirm details',
@@ -125,6 +139,8 @@ export class AddReportPage {
         {
           text: 'Confirm',
           handler: () => {
+
+        
             this.fireStore.addReport(report);
             this.testerDetails.addItem(report);
             this.testerDetails.addTesterID(report.testerNo);
