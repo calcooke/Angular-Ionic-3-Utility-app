@@ -21,6 +21,7 @@ import { AppMinimize } from '@ionic-native/app-minimize';
 import { TesterDetailsProvider } from '../providers/tester-details/tester-details';
 import {IonicStorageModule} from '@ionic/storage'
 import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
+import {MenuComponent} from'../components/menu/menu'
 
 
 // "rxjs": "5.5.2",
@@ -43,6 +44,7 @@ var firebaseConfig = {
     AddReportPage,
     ParlourTypePage,
     PreviousReportsPage,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
