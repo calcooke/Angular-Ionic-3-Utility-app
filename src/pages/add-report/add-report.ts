@@ -1,4 +1,4 @@
-import { Component, ɵConsole } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from 'ionic-angular';
@@ -76,6 +76,20 @@ export class AddReportPage {
 
         }
 
+        
+        for (const key in report) {
+
+          report[key].trim();
+
+          if(key !== 'county'){
+
+            report[key].toLowerCase();
+            console.log(report[key].toLowerCase());
+
+          }
+        
+        }
+
         if(this.reportForm.value.note){
 
           this.showConfirm(report);
@@ -88,8 +102,8 @@ export class AddReportPage {
 
         //this.testerDetails.testerId = this.reportForm.value.testerNo;
         this.testerDetails.addTesterID(this.reportForm.value.testerNo);
-  
 
+  
     }
 
   }
