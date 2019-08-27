@@ -34,7 +34,9 @@ var firebaseConfig = {
   storageBucket: "imqcs-9f384.appspot.com",
   messagingSenderId: "1047935680788",
   appId: "1:1047935680788:web:17b7d85046645760"
-};
+}; 
+
+
 
 
 @NgModule({
