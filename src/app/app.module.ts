@@ -23,7 +23,7 @@ import {IonicStorageModule} from '@ionic/storage'
 import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
 import {MenuComponent} from'../components/menu/menu'
 
-import { Deploy } from 'cordova-plugin-ionic'
+
 
 
 
