@@ -18,7 +18,12 @@ export class AddReportPage {
 
   public reportForm: FormGroup;
   testerId: String = " ";
+  date = new Date();
+  transformedDate = this.datepipe.transform(this.date, 'dd-MM-yy HH:mm');
+ // realDate = this.transformedDate.toString();
+  myDate: String = new Date().toISOString();
   
+  //transformedDate = this.datepipe.transform(this.myDate, 'dd-MM-yy');
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public formBuilder: FormBuilder, 
@@ -34,11 +39,11 @@ export class AddReportPage {
       //testerNo: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       // testerNo: [`${testerDetails.testerId}`, Validators.compose([Validators.minLength(5), Validators.required])],
       //stickerNo: ['', Validators.compose([Validators.maxLength(15), Validators.pattern('[a-zA-Z0-9-]*'), Validators.required])],
-      testerNo: [`${this.testerId}`, Validators.compose([Validators.maxLength(20), Validators.minLength(3), Validators.required])],
+      testerNo: [`${this.testerId}`, Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
       testDate: ['', Validators.required],
-      reportNo: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(3), Validators.required])],
-      stickerNo: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(3), Validators.required])],
-      farmID: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(3), Validators.required])],
+      reportNo: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
+      stickerNo: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
+      farmID: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
       county: ['', Validators.required],
       note: ['']
       
@@ -61,7 +66,7 @@ export class AddReportPage {
     
     if(this.reportForm.valid){
 
-      let date = new Date()
+      // let date = new Date()
       
         let report:iReport = {
 
@@ -71,7 +76,8 @@ export class AddReportPage {
           stickerNo: this.reportForm.value.stickerNo,
           farmID: this.reportForm.value.farmID,
           county: this.reportForm.value.county,
-          dateAdded: this.datepipe.transform(date, 'dd-MM-yy HH:mm'),
+          // dateAdded: this.datepipe.transform(this.date, 'dd-MM-yy HH:mm'),
+          dateAdded: this.transformedDate,
           note: this.reportForm.value.note
 
         }

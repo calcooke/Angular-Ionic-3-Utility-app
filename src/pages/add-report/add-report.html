@@ -30,9 +30,9 @@
       </ion-label>
 
       <ion-item>
-        <ion-datetime displayFormat="DD/MM/YYYY" formControlName='testDate'></ion-datetime> 
+        <ion-datetime display-format="DD, MM, YYYY" formControlName='testDate' [max]="myDate"></ion-datetime>
       </ion-item>
-  
+
       <ion-label>
         Test report No.
       </ion-label>
