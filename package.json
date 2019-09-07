@@ -62,8 +62,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic": {
+        "CHANNEL_NAME": "Beta",
         "APP_ID": "98b060c0",
-        "CHANNEL_NAME": "Production",
         "UPDATE_METHOD": "background",
         "WARN_DEBUG": "true",
         "UPDATE_API": "https://api.ionicjs.com",
