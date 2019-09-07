@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { App, Platform } from 'ionic-angular';
+import { App, Platform, IonicApp } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AppMinimize } from '@ionic-native/app-minimize';
@@ -15,17 +15,27 @@ export class MyApp {
   rootPage:any = HomePage;
   fetched:boolean = false;
 
-  constructor(platform: Platform, public app: App, private backgroundFetch: BackgroundFetch, statusBar: StatusBar, splashScreen: SplashScreen, private appMinimize: AppMinimize) {
+  constructor(platform: Platform, public app: App, private ionicApp: IonicApp, private backgroundFetch: BackgroundFetch, statusBar: StatusBar, splashScreen: SplashScreen, private appMinimize: AppMinimize) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       // splashScreen.hide();
+      
 
       platform.registerBackButtonAction(() => {
 
         let nav = app.getActiveNavs()[0];
         let activeNav = nav.getActive();
+        let activePortal = this.ionicApp._loadingPortal.getActive() ||
+        this.ionicApp._modalPortal.getActive() ||
+        this.ionicApp._toastPortal.getActive() ||
+        this.ionicApp._overlayPortal.getActive();
+
+        if (activePortal) {
+          activePortal.dismiss();
+          return;
+        }
 
         if (activeNav.name === "HomePage"){
           this.appMinimize.minimize();
@@ -41,6 +51,8 @@ export class MyApp {
 
 
     });
+
+    
 
   const config: BackgroundFetchConfig = {
     stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
