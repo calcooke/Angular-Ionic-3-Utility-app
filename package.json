@@ -62,7 +62,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic": {
-        "CHANNEL_NAME": "Beta",
+        "CHANNEL_NAME": "Production",
+        "MIN_BACKGROUND_DURATION": "60",
         "APP_ID": "98b060c0",
         "UPDATE_METHOD": "background",
         "WARN_DEBUG": "true",
