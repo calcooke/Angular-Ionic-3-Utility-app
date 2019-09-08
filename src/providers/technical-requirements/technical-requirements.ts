@@ -12,7 +12,7 @@ export class TechnicalRequirementsProvider {
 
   getData():Observable<any>{
 
-    let url = './assets/requirements.json';
+    let url = 'assets/requirements.json';
     //let url = 'file:///android_asset/www/assets/requirements.json'
 
     let data: Observable<any> = this.http.get(url);
