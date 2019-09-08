@@ -30,29 +30,29 @@ import {MenuComponent} from'../components/menu/menu'
 
 // "rxjs": "5.5.2",
 
-//ORIGINAL DATABASE
+//Production DATABASE
 
-// var firebaseConfig = {
-//   apiKey: "AIzaSyCQRcFdHZhIYHUU_6nEytQoTVeSS5hFGLM",
-//   authDomain: "imqcs-9f384.firebaseapp.com",
-//   databaseURL: "https://imqcs-9f384.firebaseio.com",
-//   projectId: "imqcs-9f384",
-//   storageBucket: "imqcs-9f384.appspot.com",
-//   messagingSenderId: "1047935680788",
-//   appId: "1:1047935680788:web:17b7d85046645760"
-// }; 
+var firebaseConfig = {
+  apiKey: "AIzaSyCQRcFdHZhIYHUU_6nEytQoTVeSS5hFGLM",
+  authDomain: "imqcs-9f384.firebaseapp.com",
+  databaseURL: "https://imqcs-9f384.firebaseio.com",
+  projectId: "imqcs-9f384",
+  storageBucket: "imqcs-9f384.appspot.com",
+  messagingSenderId: "1047935680788",
+  appId: "1:1047935680788:web:17b7d85046645760"
+}; 
 
 //IMQCS BETA DATABASE
 
-var firebaseConfig = {
-  apiKey: "AIzaSyBAZZ-iV3y5ErYYjVhLs3KI7MBTFHna0Pw",
-  authDomain: "imqcsbeta.firebaseapp.com",
-  databaseURL: "https://imqcsbeta.firebaseio.com",
-  projectId: "imqcsbeta",
-  storageBucket: "",
-  messagingSenderId: "29514171062",
-  appId: "1:29514171062:web:186756fc6042368537dc17"
-};
+// var firebaseConfig = {
+//   apiKey: "AIzaSyBAZZ-iV3y5ErYYjVhLs3KI7MBTFHna0Pw",
+//   authDomain: "imqcsbeta.firebaseapp.com",
+//   databaseURL: "https://imqcsbeta.firebaseio.com",
+//   projectId: "imqcsbeta",
+//   storageBucket: "",
+//   messagingSenderId: "29514171062",
+//   appId: "1:29514171062:web:186756fc6042368537dc17"
+// };
 
 
 @NgModule({
