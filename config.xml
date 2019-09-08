@@ -96,7 +96,7 @@
         <variable name="MIN_BACKGROUND_DURATION" value="10" />
         <variable name="CHANNEL_NAME" value="Production" />
         <variable name="APP_ID" value="98b060c0" />
-        <variable name="UPDATE_METHOD" value="background" />
+        <variable name="UPDATE_METHOD" value="none" />
         <variable name="WARN_DEBUG" value="true" />
         <variable name="UPDATE_API" value="https://api.ionicjs.com" />
         <variable name="MAX_STORE" value="2" />
