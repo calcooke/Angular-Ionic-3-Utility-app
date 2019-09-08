@@ -62,10 +62,10 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic": {
+        "UPDATE_METHOD": "none",
         "MIN_BACKGROUND_DURATION": "10",
         "CHANNEL_NAME": "Production",
         "APP_ID": "98b060c0",
-        "UPDATE_METHOD": "none",
         "WARN_DEBUG": "true",
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "2"
