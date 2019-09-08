@@ -21,6 +21,7 @@ export class ParlourTypePage {
     this.techRequirements.getData().subscribe(result => {
 
       this.requirements = result;
+      console.log(this.requirements);
 
     })
 
