@@ -22,6 +22,7 @@ export class AddReportPage {
   transformedDate = this.datepipe.transform(this.date, 'dd-MM-yy HH:mm');
  // realDate = this.transformedDate.toString();
   myDate: String = new Date().toISOString();
+  theCondition: String;
   
   //transformedDate = this.datepipe.transform(this.myDate, 'dd-MM-yy');
   constructor(public navCtrl: NavController, 
@@ -46,6 +47,7 @@ export class AddReportPage {
       stickerNo: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
       farmID: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
       county: ['', Validators.required],
+      condition: ['Pass',Validators.requiredTrue],
       note: ['']
       
     });
@@ -56,12 +58,20 @@ export class AddReportPage {
 
   ionViewDidLoad() {
 
+    console.log(this.reportForm.value.condition)
+
     this.testerDetails.getTesterID().then(val => {
 
       this.testerId = val;
 
     });
     
+  }
+
+  public somethinghappened(){
+
+    console.log(this.reportForm.value.condition);
+
   }
  
   public addReport() {

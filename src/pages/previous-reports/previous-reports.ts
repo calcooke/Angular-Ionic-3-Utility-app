@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TesterDetailsProvider} from '../../providers/tester-details/tester-details'
-import {iReport} from '../../interfaces/report';
+//import {iReport} from '../../interfaces/report';
 
 
 
@@ -14,19 +14,19 @@ import {iReport} from '../../interfaces/report';
 
 export class PreviousReportsPage {
 
-  previousReports:iReport[] = [];
+  // previousReports:iReport[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public testerDetails: TesterDetailsProvider) {
   }
 
-  ionViewDidLoad() {
+  // ionViewDidLoad() {
 
-    this.testerDetails.getItems().then(reports => {
+  //   this.testerDetails.getItems().then(reports => {
 
-      this.previousReports = reports;
+  //     this.previousReports = reports;
 
-    })
+  //   })
 
-  }
+  // }
 
 }

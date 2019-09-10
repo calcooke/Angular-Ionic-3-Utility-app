@@ -93,6 +93,8 @@
         <ion-option>Wicklow</ion-option>
       </ion-select>
 
+    </ion-item>
+
       <!-- <ionic-selectable
         item-content
         formControlName="county"
@@ -103,7 +105,28 @@
         (onChange)="portChange($event)">
       </ionic-selectable> -->
 
-    </ion-item>
+      <ion-label >
+          Condition
+      </ion-label>
+
+      <!-- <input class="form-check-input" type="radio" value="dog" [(ngModel)]="theCondition" required [ngModelOptions]="{standalone: true}" name="gob" value="Pass" [checked]="true" /> PAss -->
+
+      <ion-list radio-group formControlName='condition'  (ionChange)="somethinghappened()" checked>
+          
+          <ion-item>
+            <ion-label>Pass</ion-label>
+            <ion-radio value="Pass"checked ></ion-radio>
+            <!-- <input type="radio" formControlName='condition' value="Pass" required> -->
+           
+          </ion-item>
+          <ion-item>
+            <ion-label>Fail</ion-label>
+            <ion-radio value="Fail" ></ion-radio>
+
+          </ion-item>
+        </ion-list>
+
+    
 
       <ion-label >
         Notes
@@ -112,7 +135,8 @@
     <ion-item>
         
         <ion-textarea formControlName='note' custom-maxlength [charMaxLength]="5" rows="6" cols="20" type="text" placeholder="Enter any notes here..."   ></ion-textarea>
-     </ion-item>
+    
+    </ion-item>
 
 
     </form>
