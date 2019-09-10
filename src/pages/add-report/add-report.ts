@@ -47,7 +47,7 @@ export class AddReportPage {
       stickerNo: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
       farmID: ['', Validators.compose([Validators.maxLength(20), Validators.minLength(1), Validators.required])],
       county: ['', Validators.required],
-      condition: ['Pass',Validators.requiredTrue],
+      condition: ['Pass',Validators.required],
       note: ['']
       
     });
@@ -90,6 +90,7 @@ export class AddReportPage {
           farmID: this.reportForm.value.farmID,
           county: this.reportForm.value.county,
           // dateAdded: this.datepipe.transform(this.date, 'dd-MM-yy HH:mm'),
+          rating:this.reportForm.value.condition,
           dateAdded: this.transformedDate,
           note: this.reportForm.value.note
 
@@ -159,6 +160,8 @@ export class AddReportPage {
           <br/>
           <strong>County:</strong> ${report.county}
           <br/>
+          <strong>Rating:</strong> ${report.rating}
+          <br/>
           <strong>Note:</strong> ${report.note}
         
       `,
@@ -202,6 +205,8 @@ export class AddReportPage {
           <strong>Sticker No.:</strong> ${report.stickerNo}
           <br/>
           <strong>Farm I.D:</strong> ${report.farmID}
+          <br/>
+          <strong>Rating:</strong> ${report.rating}
           <br/>
           <strong>County:</strong> ${report.county}
         

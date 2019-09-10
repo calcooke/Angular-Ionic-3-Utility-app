@@ -7,6 +7,7 @@ export interface iReport
     farmID: string;
     county: string;
     dateAdded: string;
+    rating: string;
     note?: string;
     open?:Boolean;
 }
