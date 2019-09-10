@@ -1,0 +1,36 @@
+report-list {
+
+    // .previousReport{
+
+    //     padding-top :5px;
+    //     background-color:#1f80bf;
+
+    // }
+    
+        .ion-list-header{
+
+            margin-bottom: 5px;
+
+        }
+
+    .accordion-list{
+        background: color($colors,light);
+        height:100%;
+        //background-color: #1f80bf;
+        margin-bottom: 1px;
+        
+    }
+
+    .section-active{
+
+        //background:#1f80bf;
+        //color: white;
+        margin-bottom: 1px;
+
+    }
+
+    .list{
+        margin-bottom: 4px;
+    }
+
+}

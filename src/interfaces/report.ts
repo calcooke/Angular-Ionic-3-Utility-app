@@ -8,4 +8,5 @@ export interface iReport
     county: string;
     dateAdded: string;
     note?: string;
+    open?:Boolean;
 }

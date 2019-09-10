@@ -12,40 +12,8 @@
 
 </ion-header>
 
-
 <ion-content>
 
-    <ion-list class="previousReport" *ngFor="let report of previousReports">
-  
-          <!-- <ion-list-header>
-          
-          </ion-list-header> -->
-          
-          <ion-item>
-            <ion-label><strong>Test date: </strong> {{report.testDate}}</ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-label><strong>Report number: </strong>{{report.reportNo}}</ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-label><strong>Sticker number: </strong>{{report.stickerNo}}</ion-label>
-          </ion-item>
-
-          <ion-item>
-              <ion-label><strong>Farm ID: </strong>{{report.farmID}}</ion-label>
-          </ion-item>
-
-          <ion-item>
-              <ion-label><strong>County: </strong>{{report.county}}</ion-label>
-          </ion-item>
-
-          <ion-item *ngIf="report.note">
-              <ion-label><strong>Note: </strong><p text-wrap>{{report.note}}</p></ion-label>
-              
-          </ion-item>
-
-        </ion-list>
+  <report-list></report-list>
 
 </ion-content>

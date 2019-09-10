@@ -39,10 +39,13 @@ export class TesterDetailsProvider {
 
   addItem(report:iReport): Promise<any>{
 
+    report.open = false;
+
     return this.storage.get(ITEMS_KEY).then((reports:iReport[]) => {
 
       if(reports){
 
+        
         reports.push(report);
 
         return this.storage.set(ITEMS_KEY, reports)
