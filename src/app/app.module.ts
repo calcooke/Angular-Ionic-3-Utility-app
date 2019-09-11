@@ -23,6 +23,7 @@ import {IonicStorageModule} from '@ionic/storage'
 import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
 import {MenuComponent} from'../components/menu/menu'
 import {ReportListComponent} from '../components/report-list/report-list'
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 
@@ -73,7 +74,8 @@ var firebaseConfig = {
     AngularFirestoreModule.enablePersistence(),
     AngularFireModule.initializeApp(firebaseConfig),
     IonicSelectableModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp], 
   entryComponents: [
