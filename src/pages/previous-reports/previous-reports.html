@@ -14,6 +14,69 @@
 
 <ion-content>
 
-  <report-list></report-list>
+  <ion-searchbar
+    [formControl]="searchControl"
+    (ionChange)="onSearchInput()" [(ngModel)]="searchTerm" *ngIf="dataLoaded"
+  ></ion-searchbar>
+
+  <p class="nodata" *ngIf="!dataLoaded">Empty</p>
+
+ 
+
+<div *ngIf="searching" class="spinner-container">
+  <ion-spinner></ion-spinner>
+</div>
+
+<ion-list class="accordion-list">
+
+  <ion-list-header *ngFor="let report of previousReports; let i= index" no-lines no-padding>
+
+    <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': report.open, 'section': !report.open}">
+
+        <ion-icon item-left name="arrow-forward" *ngIf="report.open==false"></ion-icon>
+        <ion-icon item-left name="arrow-down" *ngIf="report.open==true"></ion-icon>
+        <strong>Report No.</strong> {{report.reportNo}}
+
+    </button>
+
+        <ion-list *ngIf="report.open==true">
+
+              <ion-item>
+                <ion-label><strong>Test date: </strong> {{report.testDate}}</ion-label>
+              </ion-item>
+
+              <!-- <ion-item>
+                <ion-label><strong>Report number: </strong>{{report.reportNo}}</ion-label>
+              </ion-item> -->
+
+              <ion-item>
+                <ion-label><strong>Sticker number: </strong>{{report.stickerNo}}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label><strong>Farm ID: </strong>{{report.farmID}}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label><strong>County: </strong>{{report.county}}</ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><strong>Rating: </strong>{{report.rating}}</ion-label>
+            </ion-item>
+
+              <ion-item *ngIf="report.note">
+                  <ion-label><strong>Note: </strong><p text-wrap>{{report.note}}</p></ion-label>
+                  
+              </ion-item>
+
+        </ion-list>
+
+
+  </ion-list-header>
+
+
+
+</ion-list>
 
 </ion-content>

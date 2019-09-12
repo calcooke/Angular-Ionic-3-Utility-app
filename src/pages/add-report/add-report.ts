@@ -180,6 +180,7 @@ export class AddReportPage {
             this.fireStore.addReport(report);
             this.testerDetails.addItem(report);
             this.testerDetails.addTesterID(report.testerNo);
+            //this.testerDetails.refreshList();
             this.presentToast();
             this.navCtrl.popToRoot();
           }
@@ -224,6 +225,7 @@ export class AddReportPage {
             this.fireStore.addReport(report);
             this.testerDetails.addItem(report);
             this.testerDetails.addTesterID(report.testerNo);
+            //this.testerDetails.refreshList();
             this.presentToast();
             this.navCtrl.popToRoot();
           }

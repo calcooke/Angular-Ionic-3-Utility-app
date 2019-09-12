@@ -32,7 +32,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 // "rxjs": "5.5.2",
 
-//Production DATABASE
+// shoddy Production DATABASE
 
 var firebaseConfig = {
   apiKey: "AIzaSyCQRcFdHZhIYHUU_6nEytQoTVeSS5hFGLM",

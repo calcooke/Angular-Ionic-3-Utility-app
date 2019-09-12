@@ -1,5 +1,10 @@
 <!-- <ion-searchbar class="searchbar" [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()"></ion-searchbar> -->
-<ion-searchbar [formControl]="searchControl" [(ngModel)]="searchTerm" (ionChange)="onSearchInput()" ></ion-searchbar>
+<ion-searchbar
+    [formControl]="searchControl"
+    (ionChange)="onSearchInput()"
+  ></ion-searchbar>
+
+ 
 
 <div *ngIf="searching" class="spinner-container">
   <ion-spinner></ion-spinner>

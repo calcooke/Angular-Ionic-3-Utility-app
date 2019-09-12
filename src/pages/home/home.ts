@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams  } from 'ionic-angular';
 import {AddReportPage} from '../add-report/add-report';
 import {ParlourTypePage} from '../parlour-type/parlour-type';
 import {FireStoreProvider} from '../../providers/fire-store/fire-store';
 import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch';
 import {PreviousReportsPage} from '../previous-reports/previous-reports';
+import {TesterDetailsProvider} from '../../providers/tester-details/tester-details'
 
 
 
@@ -17,11 +18,13 @@ export class HomePage {
   public requirements:any;
   fetched:boolean = false;
 
-  constructor(public navCtrl: NavController, public fireStore: FireStoreProvider, private backgroundFetch: BackgroundFetch) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fireStore: FireStoreProvider, public testerDetails: TesterDetailsProvider, private backgroundFetch: BackgroundFetch) {
 
     const config: BackgroundFetchConfig = {
       stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
     };
+
+    
   
     backgroundFetch.configure(config)
        .then(() => {
@@ -39,6 +42,14 @@ export class HomePage {
     backgroundFetch.stop();
 
   }
+
+  ionViewDidLoad() {
+    console.log("I'm alive!");
+  }
+  ionViewWillLeave() {
+    console.log("About to leave and home page")
+  }
+
 
   public goToAddReport(){
 
