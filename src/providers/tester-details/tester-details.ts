@@ -20,18 +20,10 @@ export class TesterDetailsProvider{
 
     this.getItems().then(reports => {
 
-
       this.reports = reports;
-      console.log("Get reports has been called in service constructor");
      
-       
     })
 
-
-  }
-
-  sayHello(){
-    console.log("hello");
   }
 
 
@@ -39,10 +31,8 @@ export class TesterDetailsProvider{
 
     this.getItems().then(reports => {
 
-
+      //Retrieving reports from storage and assigning them to a variable
       this.reports = reports;
-      console.log("Reports are retrieved from storage in tester details");
-     
        
     })
   
@@ -76,7 +66,6 @@ export class TesterDetailsProvider{
 
       if(reports){
 
-        
         reports.push(report);
 
         return this.storage.set(ITEMS_KEY, reports)
@@ -95,12 +84,9 @@ export class TesterDetailsProvider{
      return this.storage.get(ITEMS_KEY);
   }
 
-  filterItems(searchTerm) {
+  filterItems(searchTerm) { 
 
-    console.log("Reports in the service")
-    console.log(this.reports);
-
-    console.log("Filtering in service with the search term " + searchTerm)
+    //Returning any elements which contain the search term
 
     return this.reports.filter((item) => {
       return ((item.testerNo.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) || 

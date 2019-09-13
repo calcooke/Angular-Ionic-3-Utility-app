@@ -36,63 +36,37 @@ export class PreviousReportsPage {
 
   ionViewWillLoad(){
 
+    //Retrieve data from storage and store it in a variable in the tester details service.
+    //This is for refreshing the data
 
-    console.log("ion view will load")
     this.testerDetails.getData();
-    console.log("ion view will load finished")
-
+    
   }
 
   ionViewDidLoad() {
 
-    console.log("Ion view did load")
 
     this.testerDetails.getItems().then(reports => {
 
-      
-      console.log("Called get item in provider, got these reports back")
-      console.log(reports);
+      //Dataloaded boolean to hide the searchbar in the HTML
 
       if(reports == null){console.log("No reports yet")}else{this.dataLoaded = true};
 
       this.setFilteredItems();
 
       this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
-        console.log("Calling search value changes with a value of ### " + search + " ####")
-        console.log(search.length);
-
-          // if(search.length ==0){
-
-          //   console.log("Search is empty");
-          //   console.log(this.previousReports.length);
-          //   this.previousReports.forEach(function (index) {
-
-          //       console.log("Open is " + index.open)
-
-          //       if(index.open == true){
-          //           index.open = false;
-          //       };
-          //   })
-
-          // }
-
+        
           this.searching = false;
-          console.log("Search value changes has run, calling set filtered items");
+          
           this.setFilteredItems();
       
 
     });
   });
 
-  
-
-  
+  //When coding functionality on the clear button use (ionClear)="function()"
 
 
-}
-
-resetOpen(i){
-  
 }
 
 
@@ -110,29 +84,19 @@ resetOpen(i){
 
     // })
     this.openNoteIndex = i;
-    console.log ("Open note index is" + this.openNoteIndex);
-
+    
     this.previousReports[i].open = !this.previousReports[i].open;
    
   }
 
-  resetSearch(){
-
-    console.log("cleared");
-    //this.searchTerm = '';
-
-  }
+  // Called whenever a user types
 
   onSearchInput(){
-    // if(this.searchTerm.length > 0 && this.openNote){
-    // this.previousReports[this.openNoteIndex].open = false;
-    // this.openNoteIndex = null;
-    // }
-    console.log("Does search input work?");
+    
     
     this.previousReports.forEach(function (index) {
 
-      console.log("Open is " + index.open)
+      //This sets all reports open value back to false when searching. Problems with the CSS arise otherwise
 
       if(index.open == true){
           index.open = false;
@@ -144,24 +108,17 @@ resetOpen(i){
 //     console.log(index); // 0, 1, 2
 // });
 
-   console.log("Have these fired?");
-
-    // if(this.searchTerm.length == 0){
-    //   this.setFilteredItems();
-    // }
     this.searching = true;
 }
 
   setFilteredItems() {
 
     if(this.dataLoaded == true){
-    console.log("PAssing this search term into the provider");
-    console.log(this.searchTerm);
+
     this.previousReports = this.testerDetails.filterItems(this.searchTerm);
-  }
-  }
 
-  
+    }
 
+  }
 
 }
