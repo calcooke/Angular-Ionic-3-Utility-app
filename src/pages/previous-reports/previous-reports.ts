@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {TesterDetailsProvider} from '../../providers/tester-details/tester-details'
 import {iReport} from '../../interfaces/report';
 import { FormControl } from "@angular/forms";
 import 'rxjs/add/operator/debounceTime';
+
 
 
 
@@ -23,6 +24,8 @@ export class PreviousReportsPage {
   public searchControl: FormControl;
   searching: any = false;
   dataLoaded:Boolean = false;
+  openNoteIndex: number;
+  openNote:Boolean;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public testerDetails: TesterDetailsProvider) {
@@ -55,20 +58,41 @@ export class PreviousReportsPage {
       this.setFilteredItems();
 
       this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
-        console.log("checking what search is");
-        console.log(search);
+        console.log("Calling search value changes with a value of ### " + search + " ####")
+        console.log(search.length);
+
+          // if(search.length ==0){
+
+          //   console.log("Search is empty");
+          //   console.log(this.previousReports.length);
+          //   this.previousReports.forEach(function (index) {
+
+          //       console.log("Open is " + index.open)
+
+          //       if(index.open == true){
+          //           index.open = false;
+          //       };
+          //   })
+
+          // }
+
           this.searching = false;
+          console.log("Search value changes has run, calling set filtered items");
           this.setFilteredItems();
-          this.testerDetails.sayHello();
+      
 
     });
   });
 
   
 
+  
 
 
+}
 
+resetOpen(i){
+  
 }
 
 
@@ -85,6 +109,8 @@ export class PreviousReportsPage {
     //   }
 
     // })
+    this.openNoteIndex = i;
+    console.log ("Open note index is" + this.openNoteIndex);
 
     this.previousReports[i].open = !this.previousReports[i].open;
    
@@ -93,13 +119,33 @@ export class PreviousReportsPage {
   resetSearch(){
 
     console.log("cleared");
-    this.searchTerm = '';
+    //this.searchTerm = '';
 
   }
 
   onSearchInput(){
+    // if(this.searchTerm.length > 0 && this.openNote){
+    // this.previousReports[this.openNoteIndex].open = false;
+    // this.openNoteIndex = null;
+    // }
     console.log("Does search input work?");
-    console.log(this.searchTerm);
+    
+    this.previousReports.forEach(function (index) {
+
+      console.log("Open is " + index.open)
+
+      if(index.open == true){
+          index.open = false;
+      };
+  })
+
+//   this.previousReports.forEach((item, index) => {
+//     console.log(item); // 9, 2, 5
+//     console.log(index); // 0, 1, 2
+// });
+
+   console.log("Have these fired?");
+
     // if(this.searchTerm.length == 0){
     //   this.setFilteredItems();
     // }

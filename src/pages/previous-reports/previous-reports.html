@@ -16,7 +16,7 @@
 
   <ion-searchbar
     [formControl]="searchControl"
-    (ionChange)="onSearchInput()" [(ngModel)]="searchTerm" *ngIf="dataLoaded"
+    (ionChange)="onSearchInput()" (ionClear)="resetOpen()" [(ngModel)]="searchTerm" *ngIf="dataLoaded"
   ></ion-searchbar>
 
   <p class="nodata" *ngIf="!dataLoaded">Empty</p>
