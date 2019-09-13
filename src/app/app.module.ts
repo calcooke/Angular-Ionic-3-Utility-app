@@ -22,7 +22,6 @@ import { TesterDetailsProvider } from '../providers/tester-details/tester-detail
 import {IonicStorageModule} from '@ionic/storage'
 import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
 import {MenuComponent} from'../components/menu/menu'
-import {ReportListComponent} from '../components/report-list/report-list'
 import { ReactiveFormsModule } from "@angular/forms";
 
 
@@ -65,7 +64,6 @@ var firebaseConfig = {
     ParlourTypePage,
     PreviousReportsPage,
     MenuComponent,
-    ReportListComponent
   ],
   imports: [
     BrowserModule,
