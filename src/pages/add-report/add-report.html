@@ -24,6 +24,10 @@
       <ion-item>
         <ion-input type='text' formControlName='testerNo'></ion-input>
       </ion-item>
+
+      <div style="color: red; padding-top: 0.2rem" *ngIf="!reportForm.controls.testerNo.valid && reportForm.controls.testerNo.dirty" class="validator-error">
+      Please enter a valid tester no.
+      </div>
   
       <ion-label>
         Test date
@@ -33,6 +37,7 @@
         <ion-datetime display-format="DD, MM, YYYY" formControlName='testDate' [max]="myDate"></ion-datetime>
       </ion-item>
 
+
       <ion-label>
         Test report No.
       </ion-label>
@@ -40,6 +45,10 @@
       <ion-item>
         <ion-input type='text' formControlName='reportNo'></ion-input>
       </ion-item>
+
+      <div style="color: red; padding-top: 0.2rem" *ngIf="!reportForm.controls.reportNo.valid && reportForm.controls.reportNo.dirty" class="validator-error">
+        Please enter a valid tester no.
+      </div>
   
       <ion-label>
         Sticker No.
@@ -49,6 +58,10 @@
         <ion-input type='text' formControlName='stickerNo'></ion-input>
       </ion-item>
 
+      <div style="color: red; padding-top: 0.2rem" *ngIf="!reportForm.controls.stickerNo.valid && reportForm.controls.stickerNo.dirty" class="validator-error">
+        Please enter a valid tester no.
+      </div>
+
       <ion-label>
         Farm I.D
       </ion-label>
@@ -56,6 +69,10 @@
       <ion-item>
         <ion-input type='text' formControlName='farmID'></ion-input>
       </ion-item>
+
+      <div style="color: red; padding-top: 0.2rem" *ngIf="!reportForm.controls.farmID.valid && reportForm.controls.farmID.dirty" class="validator-error">
+        Please enter a valid tester no.
+      </div>
 
       <ion-label>
         County
@@ -125,7 +142,6 @@
           </ion-item>
         </ion-list>
 
-    
 
       <ion-label >
         Notes
