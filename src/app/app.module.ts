@@ -26,9 +26,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 
 
-//BETA UPDATE 13/09/19
-
-// Testing IPA build from windows
+// About to add version number
 
 
 // "rxjs": "5.5.2",
