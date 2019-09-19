@@ -26,8 +26,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 
 
-// About to add version number
-
+// JSON stopped working
 
 // "rxjs": "5.5.2",
 
