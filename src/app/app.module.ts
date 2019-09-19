@@ -26,7 +26,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 
 
-// JSON stopped working
+// Moved back to 0.0.3 after xcode changed to 0.0.1
 
 // "rxjs": "5.5.2",
 
