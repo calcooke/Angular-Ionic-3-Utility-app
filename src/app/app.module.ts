@@ -25,7 +25,7 @@ import {MenuComponent} from'../components/menu/menu'
 import { ReactiveFormsModule } from "@angular/forms";
 
 
-// Can i push this cange to mac to sort webview error
+// Ionic cordova prepare
 // Moved back to 0.0.3 after xcode changed to 0.0.1
 
 // "rxjs": "5.5.2",
