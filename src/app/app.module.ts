@@ -25,7 +25,7 @@ import {MenuComponent} from'../components/menu/menu'
 import { ReactiveFormsModule } from "@angular/forms";
 
 
-//Incrementing to 0.0.5
+//Incremented to 0.0.5 and ionic cordova build on ios
 
 // "rxjs": "5.5.2",
 
