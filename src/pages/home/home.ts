@@ -5,7 +5,8 @@ import {ParlourTypePage} from '../parlour-type/parlour-type';
 import {FireStoreProvider} from '../../providers/fire-store/fire-store';
 import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch';
 import {PreviousReportsPage} from '../previous-reports/previous-reports';
-import {TesterDetailsProvider} from '../../providers/tester-details/tester-details'
+import {TesterDetailsProvider} from '../../providers/tester-details/tester-details';
+import {AuthProvider} from '../../providers/auth/auth';
 
 
 
@@ -18,7 +19,7 @@ export class HomePage {
   public requirements:any;
   fetched:boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public fireStore: FireStoreProvider, public testerDetails: TesterDetailsProvider, private backgroundFetch: BackgroundFetch) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fireStore: FireStoreProvider, public testerDetails: TesterDetailsProvider, private backgroundFetch: BackgroundFetch, private auth:AuthProvider) {
 
     const config: BackgroundFetchConfig = {
       stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
@@ -67,6 +68,13 @@ export class HomePage {
 
     this.navCtrl.push(PreviousReportsPage);
 
+  }
+
+  logout() {
+    console.log("Calling sign out");
+    this.auth.signOut();
+    //console.log("Setting root to login page after signing out");
+    //this.navCtrl.setRoot(LoginPage);
   }
 
 }

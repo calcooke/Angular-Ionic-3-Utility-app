@@ -21,5 +21,10 @@
   <!-- This is the menu component -->
 
   <menu></menu>
+
+  <ion-item (click)="logout()" *ngIf="auth.authenticated">
+      <ion-icon name="log-out" item-left></ion-icon>
+      Log out
+    </ion-item>
   
 </ion-content>
