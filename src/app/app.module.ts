@@ -24,6 +24,9 @@ import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
 import {MenuComponent} from'../components/menu/menu'
 import { ReactiveFormsModule } from "@angular/forms";
 import { AuthProvider } from '../providers/auth/auth';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import {LoginPage} from '../pages/login/login';
+import {SignupPage} from '../pages/signup/signup';
 
 
 //Incremented to 0.0.5 and ionic cordova build on ios
@@ -63,6 +66,8 @@ var firebaseConfig = {
     ParlourTypePage,
     PreviousReportsPage,
     MenuComponent,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,8 @@ var firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     IonicSelectableModule,
     IonicStorageModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp], 
   entryComponents: [
@@ -80,7 +86,9 @@ var firebaseConfig = {
     HomePage,
     AddReportPage,
     ParlourTypePage,
-    PreviousReportsPage
+    PreviousReportsPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
@@ -92,7 +100,8 @@ var firebaseConfig = {
     BackgroundFetch,
     AppMinimize,
     TesterDetailsProvider,
-    AuthProvider,
+    AngularFireAuth,
+    AuthProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
