@@ -96,6 +96,7 @@ export class AddReportPage {
 
         }
 
+        //Converting everything except county to lowercase for uniformity in the database
         
         for (const key in report) {
 

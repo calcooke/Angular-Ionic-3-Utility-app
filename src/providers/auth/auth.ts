@@ -10,9 +10,7 @@ export class AuthProvider {
 
   public user: firebase.User;
 
-	//Using this boolean to determine if a user needs to sign in or not when editing a player
-	isLoggedIn: boolean = false;
-
+	
 	constructor(public afAuth: AngularFireAuth) {
 
 		console.log("Authentication provider loaded");
@@ -27,7 +25,6 @@ export class AuthProvider {
 
 	signInWithEmail(credentials) {
 		console.log('Sign in with email');
-		this.isLoggedIn = true;
 		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
 			credentials.password);
 

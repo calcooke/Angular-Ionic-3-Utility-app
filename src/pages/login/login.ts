@@ -43,7 +43,7 @@ export class LoginPage {
 			password: data.password
 		};
 
-		//The then function is cancelled out, as in app.component.ts, the auth state is subscribed to and root pages are assigned there.
+		//The then callback is cancelled out, the auth state is subscribed to and root pages are assigned in app.component.ts.
 
 		// this.auth.signInWithEmail(credentials)
 		// 	.then(

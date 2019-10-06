@@ -70,6 +70,9 @@ export class HomePage {
 
   }
 
+  // After signing out, the root page is set to "loginpage" in app.component
+  // as the root page is determined by subscribing to the current auth state. 
+
   logout() {
     console.log("Calling sign out");
     this.auth.signOut();
