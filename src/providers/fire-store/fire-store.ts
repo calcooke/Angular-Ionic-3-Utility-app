@@ -29,15 +29,15 @@ export class FireStoreProvider {
     
     let docId:string = report.testerNo;
     
-    this.fireStoreDb.collection("testreports").doc(report.testerNo). snapshotChanges().subscribe(doc => {
+    this.fireStoreDb.collection("newLayout").doc(report.testerNo). snapshotChanges().subscribe(doc => {
        
       if (!doc.payload.exists)
       {
 
-        this.fireStoreDb.collection("testreports").doc(docId).set({});
+        this.fireStoreDb.collection("newLayout").doc(docId).set({});
       }
       else{
-        this.fireStoreDb.collection("testreports").doc(report.testerNo).update({
+        this.fireStoreDb.collection("newLayout").doc(report.testerNo).update({
 
           reports: firebase.firestore.FieldValue.arrayUnion(report)
           
