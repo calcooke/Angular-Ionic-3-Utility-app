@@ -23,6 +23,7 @@ import {IonicStorageModule} from '@ionic/storage'
 import {PreviousReportsPage} from '../pages/previous-reports/previous-reports'
 import {MenuComponent} from'../components/menu/menu'
 import { ReactiveFormsModule } from "@angular/forms";
+import { AuthProvider } from '../providers/auth/auth';
 
 
 //Incremented to 0.0.5 and ionic cordova build on ios
@@ -91,6 +92,7 @@ var firebaseConfig = {
     BackgroundFetch,
     AppMinimize,
     TesterDetailsProvider,
+    AuthProvider,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
