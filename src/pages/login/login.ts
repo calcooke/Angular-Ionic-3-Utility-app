@@ -27,7 +27,7 @@ export class LoginPage {
 			email: ['', Validators.compose([Validators.required, Validators.email])],
 			password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
 		});
-		console.log ("loading login page");
+		
   }
   
 

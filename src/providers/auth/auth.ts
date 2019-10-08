@@ -13,7 +13,6 @@ export class AuthProvider {
 	
 	constructor(public afAuth: AngularFireAuth) {
 
-		console.log("Authentication provider loaded");
 		afAuth.authState.subscribe(user => {
 			this.user = user;
 			//console.log("User object with the id  " + user.uid + "  assigned to the user");
@@ -24,7 +23,7 @@ export class AuthProvider {
 	//This sign in function is called from login.ts, credentials consist of email and password.
 
 	signInWithEmail(credentials) {
-		console.log('Sign in with email');
+		
 		return this.afAuth.auth.signInWithEmailAndPassword(credentials.email,
 			credentials.password);
 
