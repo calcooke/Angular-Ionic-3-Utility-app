@@ -33,17 +33,28 @@ import {SignupPage} from '../pages/signup/signup';
 
 // "rxjs": "5.5.2",
 
-// shoddy Production DATABASE
-
 var firebaseConfig = {
-  apiKey: "AIzaSyCQRcFdHZhIYHUU_6nEytQoTVeSS5hFGLM",
-  authDomain: "imqcs-9f384.firebaseapp.com",
-  databaseURL: "https://imqcs-9f384.firebaseio.com",
-  projectId: "imqcs-9f384",
-  storageBucket: "imqcs-9f384.appspot.com",
-  messagingSenderId: "1047935680788",
-  appId: "1:1047935680788:web:17b7d85046645760"
-}; 
+  apiKey: "AIzaSyCVf-mwGVCbwuGH6F8Vt30SPuGdX7y7Wsw",
+  authDomain: "imqcs-database.firebaseapp.com",
+  databaseURL: "https://imqcs-database.firebaseio.com",
+  projectId: "imqcs-database",
+  storageBucket: "",
+  messagingSenderId: "361241937005",
+  appId: "1:361241937005:web:074e2a663e329c2e866b64",
+  measurementId: "G-VR4D5W3K3F"
+};
+
+// // shoddy Production DATABASE
+
+// var firebaseConfig = {
+//   apiKey: "AIzaSyCQRcFdHZhIYHUU_6nEytQoTVeSS5hFGLM",
+//   authDomain: "imqcs-9f384.firebaseapp.com",
+//   databaseURL: "https://imqcs-9f384.firebaseio.com",
+//   projectId: "imqcs-9f384",
+//   storageBucket: "imqcs-9f384.appspot.com",
+//   messagingSenderId: "1047935680788",
+//   appId: "1:1047935680788:web:17b7d85046645760"
+// }; 
 
 //IMQCS REAL BETA DATABASE
 
