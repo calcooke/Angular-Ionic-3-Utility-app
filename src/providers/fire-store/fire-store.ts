@@ -31,15 +31,15 @@ export class FireStoreProvider {
     // Previouslt seting this to be report.testerNo to set each document as the tester ID
     let docId:string = this.auth.user.uid;
     
-    this.fireStoreDb.collection("newLayout").doc(docId).snapshotChanges().subscribe(doc => {
+    this.fireStoreDb.collection("users").doc(docId).snapshotChanges().subscribe(doc => {
        
       if (!doc.payload.exists)
       {
 
-        this.fireStoreDb.collection("newLayout").doc(docId).set({});
+        this.fireStoreDb.collection("users").doc(docId).set({});
       }
       else{
-        this.fireStoreDb.collection("newLayout").doc(docId).update({
+        this.fireStoreDb.collection("users").doc(docId).update({
 
           reports: firebase.firestore.FieldValue.arrayUnion(report)
           
