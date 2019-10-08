@@ -28,7 +28,7 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import {LoginPage} from '../pages/login/login';
 import {SignupPage} from '../pages/signup/signup';
 
-//RELEASED VERSION 08/10/2019
+//RELEASED VERSION ON 08/10/2019
 
 var firebaseConfig = {
   apiKey: "AIzaSyCVf-mwGVCbwuGH6F8Vt30SPuGdX7y7Wsw",
