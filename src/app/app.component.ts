@@ -72,15 +72,15 @@ export class MyApp {
       .subscribe(
         user => {
           if (user) {
-            console.log("User already exists in auth service, setting home page as root in app.component")
+            //User already exists in auth service, setting home page as root in app.component
             this.rootPage = HomePage;
           } else {
-            console.log("User does not in auth service, setting login as root in app.component")
+            //User does not in auth service, setting login as root in app.component
             this.rootPage = LoginPage;
           }
         },
         () => {
-          console.log("Then, setlogin as root in app.component")
+          //Then, setlogin as root in app.component
           this.rootPage = LoginPage;
         }
       );
@@ -91,7 +91,7 @@ export class MyApp {
   
       this.backgroundFetch.configure(config)
         .then(() => {
-          console.log('Background Fetch initialized');
+          //Background Fetch initialized'
   
           //this.fetched = true;
   
