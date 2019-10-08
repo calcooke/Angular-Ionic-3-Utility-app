@@ -38,25 +38,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       // splashScreen.hide();
 
-      this.auth.afAuth.authState
-      .subscribe(
-        user => {
-          if (user) {
-            console.log("User already exists in auth service, setting home page as root in app.component")
-            this.rootPage = HomePage;
-          } else {
-            console.log("User does not in auth service, setting login as root in app.component")
-            this.rootPage = LoginPage;
-          }
-        },
-        () => {
-          console.log("Then, setlogin as root in app.component")
-          this.rootPage = LoginPage;
-        }
-      );
-
       //Registe the back button on android to close modals etc if theyre open instead of closing the app
-
       this.platform.registerBackButtonAction(() => {
 
         let nav = this.app.getActiveNavs()[0];
@@ -74,7 +56,7 @@ export class MyApp {
         //If the name of the current page is homepage, then minimize the app when pressing the back button.
         // Oterwise, if the page can move backwards in the stack, go to the previous page
 
-        if (activeNav.name === "HomePage") {
+        if (activeNav.name === "HomePage" || activeNav.name === "LoginPage") {
           this.appMinimize.minimize();
         } else {
 
@@ -85,6 +67,23 @@ export class MyApp {
         }
 
       });
+
+      this.auth.afAuth.authState
+      .subscribe(
+        user => {
+          if (user) {
+            console.log("User already exists in auth service, setting home page as root in app.component")
+            this.rootPage = HomePage;
+          } else {
+            console.log("User does not in auth service, setting login as root in app.component")
+            this.rootPage = LoginPage;
+          }
+        },
+        () => {
+          console.log("Then, setlogin as root in app.component")
+          this.rootPage = LoginPage;
+        }
+      );
 
       const config: BackgroundFetchConfig = {
         stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
