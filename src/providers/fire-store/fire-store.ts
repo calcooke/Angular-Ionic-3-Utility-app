@@ -44,7 +44,8 @@ export class FireStoreProvider {
           reports: firebase.firestore.FieldValue.arrayUnion(report)
           
     
-        });
+        }).catch(err =>
+          console.log(err));
       }
 
     });

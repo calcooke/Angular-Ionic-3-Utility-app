@@ -31,14 +31,7 @@ import {SignupPage} from '../pages/signup/signup';
 //RELEASED VERSION ON 08/10/2019
 
 var firebaseConfig = {
-  apiKey: "AIzaSyCVf-mwGVCbwuGH6F8Vt30SPuGdX7y7Wsw",
-  authDomain: "imqcs-database.firebaseapp.com",
-  databaseURL: "https://imqcs-database.firebaseio.com",
-  projectId: "imqcs-database",
-  storageBucket: "",
-  messagingSenderId: "361241937005",
-  appId: "1:361241937005:web:074e2a663e329c2e866b64",
-  measurementId: "G-VR4D5W3K3F"
+  
 };
 
 
